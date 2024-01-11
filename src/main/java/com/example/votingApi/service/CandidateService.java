@@ -32,6 +32,11 @@ public class CandidateService {
         return candidateVotes;
     }//here we are using key as name and value as vote_count
 
+    public int countVote(String name) {
+        validateCandidate(name);
+        return candidates.get(name).getVoteCount();
+    }
+
 
 
 }
