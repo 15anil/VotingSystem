@@ -24,6 +24,14 @@ public class CandidateService {
         }
     }//this method is used for validating the candidate by checking if they contain name
 
+    public Map<String, Integer> listVote() {
+        Map<String, Integer> candidateVotes = new HashMap<>();
+        for (Candidate candidate : candidates.values()) {
+            candidateVotes.put(candidate.getName(), candidate.getVoteCount());
+        }
+        return candidateVotes;
+    }//here we are using key as name and value as vote_count
+
 
 
 }
