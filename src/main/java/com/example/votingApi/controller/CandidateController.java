@@ -28,5 +28,10 @@ public class CandidateController {
         int voteCount = candidateService.castVote(name);
         return Map.of("voteCount",voteCount);
     }
+    @GetMapping("/getWinner")
+    public Map<String,String> getWinner(){
+        String winner = candidateService.getWinner();
+        return Map.of("Winner:",winner);
+    }
 
 }

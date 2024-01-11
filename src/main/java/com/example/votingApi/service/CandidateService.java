@@ -36,6 +36,17 @@ public class CandidateService {
         validateCandidate(name);
         return candidates.get(name).getVoteCount();
     }
+    public String getWinner() {
+        if (candidates.isEmpty()) {
+            return "No candidates available";
+        }
+
+        Candidate winner = candidates.values().stream()
+                .max((c1, c2) -> Integer.compare(c1.getVoteCount(), c2.getVoteCount()))
+                .orElseThrow();
+
+        return "Winner: " + winner.getName();
+    }
 
 
 
