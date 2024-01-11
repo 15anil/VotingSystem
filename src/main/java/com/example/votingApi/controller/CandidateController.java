@@ -14,4 +14,8 @@ public class CandidateController {
     public void enterCandidate(@RequestParam String name) {
         candidateService.enterCandidate(name);
     }
+    public Map<String,Integer> countVote(@RequestParam String name){
+        int voteCount = candidateService.castVote(name);
+        return Map.of("VoteCount",voteCount);
+    }
 }
